@@ -105,7 +105,6 @@ class Trail {
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
         
-        // Draw 3D-like shape
         ctx.beginPath();
         ctx.moveTo(-this.size, -this.size);
         ctx.lineTo(this.size, -this.size);
