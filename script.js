@@ -1,7 +1,5 @@
-// Audio setup for pleasant cosmic sounds
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 
-// Pleasant note frequencies based on pentatonic scale
 const NOTES = [196.00, 220.00, 261.63, 293.66, 329.63, 392.00];
 
 function createHarmonicSound(baseFreq) {
@@ -11,17 +9,14 @@ function createHarmonicSound(baseFreq) {
     masterGain.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 2);
     masterGain.connect(audioContext.destination);
 
-    // Create reverb
     const convolver = audioContext.createConvolver();
     const reverbGain = audioContext.createGain();
     reverbGain.gain.value = 0.2;
     
-    // Main oscillator
     const osc = audioContext.createOscillator();
     osc.frequency.setValueAtTime(baseFreq, audioContext.currentTime);
     osc.type = 'sine';
     
-    // Harmonic oscillator
     const harmonic = audioContext.createOscillator();
     harmonic.frequency.setValueAtTime(baseFreq * 1.5, audioContext.currentTime);
     harmonic.type = 'sine';
