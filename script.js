@@ -80,7 +80,6 @@ class Star {
 
     update(time) {
         this.alpha = Math.abs(Math.sin(time * this.twinkleSpeed));
-        // Check if star is too close to black hole
         const dx = this.canvas.width / 2 - this.x;
         const dy = this.canvas.height / 2 - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
