@@ -34,7 +34,6 @@ function createHarmonicSound(baseFreq) {
     harmonic.stop(audioContext.currentTime + 2);
 }
 
-// Particle shapes collection
 const SHAPES = {
     SQUARE: 0,
     TRIANGLE: 1,
@@ -46,7 +45,6 @@ const SHAPES = {
     SPIRAL: 7
 };
 
-// Keyboard controls state
 const controls = {
     isShiftPressed: false,
     isCtrlPressed: false,
